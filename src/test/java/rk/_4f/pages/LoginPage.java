@@ -6,21 +6,19 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import rk._4f.tests.BaseTest;
 
-import java.security.PublicKey;
 import java.time.Duration;
 
-public class LoginPage {
+public class LoginPage extends BasePage {
 
     private WebDriver driver;
 
     public LoginPage(WebDriver driver) {
+        super();
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
-
-    @FindBy(id = "CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll")
-    private WebElement buttonAllowCookies;
 
     @FindBy(name = "email")
     private WebElement inputLoginEmail;
