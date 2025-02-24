@@ -10,7 +10,11 @@ public class LoginTest extends BaseTest {
     @Test
     public void shouldLoginSuccessfully(){
         loginPage = new LoginPage(driver);
-        loginPage.clickButtonAllowCookies().setInputLoginEmail("test").setInputLoginPassword("pass1234");
+        loginPage.clickAllowCookiesButton();
+        loginPage.clickMyAccountLink();
+        loginPage.setInputLoginEmail("test_user")
+                .setInputLoginPassword("123")
+                .clickSubmitButton();
         Assert.assertTrue(true);
     }
 

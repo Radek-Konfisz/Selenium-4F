@@ -10,14 +10,10 @@ import rk._4f.tests.BaseTest;
 
 import java.time.Duration;
 
-public class LoginPage extends BasePage {
-
-    private WebDriver driver;
+public class LoginPage extends BasePage<LoginPage> {
 
     public LoginPage(WebDriver driver) {
-        super();
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
+        super(driver);
     }
 
     @FindBy(name = "email")
@@ -26,19 +22,24 @@ public class LoginPage extends BasePage {
     @FindBy(name = "password")
     private WebElement inputLoginPassword;
 
-    public LoginPage clickButtonAllowCookies(){
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.elementToBeClickable(buttonAllowCookies)).click();
-        return this;
-    }
+    @FindBy(xpath = "//div[contains(@class,'signIn-button')]/button")
+    private WebElement submitButton;
 
     public LoginPage setInputLoginEmail(String email){
-        inputLoginEmail.sendKeys(email);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(inputLoginEmail)).sendKeys(email);
         return this;
     }
 
     public LoginPage setInputLoginPassword(String password){
-        inputLoginPassword.sendKeys(password);
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.visibilityOf(inputLoginPassword)).sendKeys(password);
+        return this;
+    }
+
+    public LoginPage clickSubmitButton(){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
+        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
         return this;
     }
 

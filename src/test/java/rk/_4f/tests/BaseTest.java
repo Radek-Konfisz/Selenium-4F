@@ -19,7 +19,8 @@ public class BaseTest {
 
     @BeforeMethod
     public void pageLoad(){
-        driver.get("https://4f.com.pl/customer/account/login");
+        driver.get("https://4f.com.pl/");
+        driver.manage().window().maximize();
     }
 
     @AfterClass
