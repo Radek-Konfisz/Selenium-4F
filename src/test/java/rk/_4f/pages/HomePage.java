@@ -11,6 +11,4 @@ public class HomePage extends BasePage<HomePage> {
         super(driver);
     }
 
-    @FindBy(name = "email")
-    private WebElement inputLoginEmail;
 }

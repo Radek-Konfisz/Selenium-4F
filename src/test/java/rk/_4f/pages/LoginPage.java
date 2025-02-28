@@ -15,30 +15,39 @@ public class LoginPage extends BasePage<LoginPage> {
     }
 
     @FindBy(name = "email")
-    private WebElement inputLoginEmail;
+    private WebElement inputEmail;
 
     @FindBy(name = "password")
-    private WebElement inputLoginPassword;
+    private WebElement inputPassword;
 
     @FindBy(xpath = "//div[contains(@class,'signIn-button')]/button")
     private WebElement signInButton;
 
-    public LoginPage setInputLoginEmail(String email){
+    @FindBy(css = ".myAccount-dashboardRoot-lm6")
+    private WebElement myAccountDashboard;
+
+    public LoginPage setEmailInput(String email) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.visibilityOf(inputLoginEmail)).sendKeys(email);
+        wait.until(d -> inputEmail.isDisplayed());
+        inputEmail.sendKeys(email);
         return this;
     }
 
-    public LoginPage setInputLoginPassword(String password){
+    public LoginPage setPasswordInput(String password) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.visibilityOf(inputLoginPassword)).sendKeys(password);
+        wait.until(d -> inputPassword.isDisplayed());
+        inputPassword.sendKeys(password);
         return this;
     }
 
-    public LoginPage clickSignInButton(){
+    public LoginPage clickSignInButton() {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
         wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
         return this;
+    }
+
+    public WebElement getMyAccountDashboard() {
+        return myAccountDashboard;
     }
 
 }
