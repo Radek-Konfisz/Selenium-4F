@@ -5,13 +5,46 @@ Content:
   - Test Approach #How are we testing?
   - Test Environment and Tools #Where are we testing?
   - Test Tools #With what are we testing?
-  - Entry Criteria #What to do to start testing?
-  - Exit Criteria #What to do to finish testing?
+  - Entry Criteria #What needs to be done to start testing?
+  - Exit Criteria #What needs to be done to finish testing?
   - Deliverables #How and where we write stuff down?
   - Risks and Issues #What could go wrong and what will go wrong?
   - Defect Management #What do we do when something goes wrong?
   - Test Schedule #When are we testing?
   - Roles #Who is testing what?
 
-Objective:
+Objective: A demo project showing the skills of using Selenium Web Driver with Java
 Test Scope:
+  - Description: 4f e-commerce online shop, frontend functionalities
+  - Website: https://4f.com.pl
+  - Functionalities: A limited list of test cases, that are specified inside Test_Cases.json document
+Test Approach: Black box automation testing in details described in Automation_Details.yaml document
+Test Environment:
+  - Operating Systems: Windows 10
+  - Browsers: Chrome 133
+Test Tools:
+  - Framework: Selenium 4.29
+  - Programming Language: Java 21
+Entry Criteria: The test environment is created and configured. There is 100% coverage of test cases.
+Exit Criteria:
+  - All tests passes.
+  - The test report has been generated.
+Deliverables:
+  - Test plan
+  - Automation details
+  - Test cases
+  - Test reports
+Risks and Issues:
+  - Not enough different testing techniques are used.
+Defect Management: Defects will be fixed as long as the schedule time frame allows.
+Test Schedule:
+  List:
+    - Creation of the test plan: 28.02.2025 - 01.03.2025 (1 day)
+    - Creation of the test environment and test cases: 01.03.2025 - 4.03.2025 (3 days)
+    - Test Cycle 1: 5.03.2025 (1 day)
+    - Report and evaluation: 5.03.2025 (1 day)
+  Disclaimer: >
+    Any point in the schedule could be changed due to other responsibilities, 
+    therefore changing the whole schedule accordingly.
+Roles:
+  - Judge, Jury and Executioner: Radek Konfisz
