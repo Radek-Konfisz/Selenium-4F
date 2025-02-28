@@ -7,6 +7,7 @@
         "ID": "TC01",
         "Test case": "A user with correct credentials can login",
         "Pre-conditions": "There is a valid user account",
+        "Test data": "",
         "Steps": [
           "Navigate to the home page",
           "Click the my account link",
@@ -24,27 +25,29 @@
       {
         "ID": "TC01",
         "Test case": "Successfully added the product to cart from the product page ",
-        "Pre-conditions": "e product is in stock",
+        "Pre-conditions": "The product is in stock",
+        "Test data": "",
         "Steps": [
           "Navigate to product page",
-          "Click the Size button",
+          "Click the Variant Option button",
           "Click the Add to cart button"
         ],
         "Expected Result": "A mini cart slides out with information about the product being successfully added to the cart"
       },
       {
         "ID": "TC02",
-        "Test case": "Successfully added another product to the cart from the cart page and the Order Total value changed",
+        "Test case": "Successfully added another product to the cart from the cart page and the order total value changed",
         "Pre-conditions": "There is a product in a cart",
+        "Test data": "",
         "Steps": [
           "Navigate to the cart page",
-          "Register the Order Total value",
+          "Register the order total value",
           "Click the Plus button",
           "Click the Update button",
-          "Compare new and old Order Total value"
+          "Compare new and old order total value"
         ],
         "Expected Result": ["The quantity of products in the cart increased by 1",
-          "The value of the order total changed"]
+          "The order total value updates based on the new quantity and product price"]
       }
     ]
   },
@@ -59,15 +62,16 @@
           "There is a product in a cart",
           "There is a valid discount code"
         ],
+        "Test data": "",
         "Steps": [
           "Navigate to the cart page",
-          "Register the Order Total value",
+          "Register the order total value",
           "Click the Discount Code button",
-          "Enter a discount code",
+          "Enter a discount code to the input field",
           "Click Apply button"
         ],
         "Expected Result": ["The information about adding a discount code is displayed",
-          "The value of the Order Total changed"]
+          "The order total value updates based on the new quantity and product price"]
       }
     ]
   }
