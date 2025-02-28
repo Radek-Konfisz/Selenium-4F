@@ -3,10 +3,8 @@ package rk._4f.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import rk._4f.tests.BaseTest;
 
 import java.time.Duration;
 
@@ -23,7 +21,7 @@ public class LoginPage extends BasePage<LoginPage> {
     private WebElement inputLoginPassword;
 
     @FindBy(xpath = "//div[contains(@class,'signIn-button')]/button")
-    private WebElement submitButton;
+    private WebElement signInButton;
 
     public LoginPage setInputLoginEmail(String email){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
@@ -37,9 +35,9 @@ public class LoginPage extends BasePage<LoginPage> {
         return this;
     }
 
-    public LoginPage clickSubmitButton(){
+    public LoginPage clickSignInButton(){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.elementToBeClickable(submitButton)).click();
+        wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
         return this;
     }
 

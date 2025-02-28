@@ -14,7 +14,7 @@ public class LoginTest extends BaseTest {
         loginPage.clickMyAccountLink();
         loginPage.setInputLoginEmail("test_user")
                 .setInputLoginPassword("123")
-                .clickSubmitButton();
+                .clickSignInButton();
         Assert.assertTrue(true);
     }
 

@@ -1,13 +1,72 @@
 [
   {
-    "Scenario": "Logowanie z użyciem poprawnych danych",
-    "Przypadki testowe": "Przypadek testowy",
-    "Warunek wstępny": "Warunek wstępny",
-    "Kroki": [
-      "1. Krok1",
-      "2. Krok2",
-      "3. Krok3"
-    ],
-    "Oczekiwany rezultat": "Logowanie powiodło się"
+    "Scenario": "Login",
+    "ID": "S01",
+    "Cases": [
+      {
+        "ID": "TC01",
+        "Test case": "User with correct credentials can login",
+        "Pre-conditions": "There is a valid user account",
+        "Steps": [
+          "Navigate to home page",
+          "Click my account link",
+          "Enter email and password",
+          "Click login button"
+        ],
+        "Expected Result": "User sees the account page"
+      }
+    ]
+  },
+  {
+    "Scenario": "Adding a product to the cart",
+    "ID": "S02",
+    "Cases": [
+      {
+        "ID": "TC01",
+        "Test case": "Successfully added product to cart from the product page ",
+        "Pre-conditions": "Product is in stock",
+        "Steps": [
+          "Navigate to product page",
+          "Click \"L size\" button",
+          "Click Add to cart button"
+        ],
+        "Expected Result": "A mini cart slides out with information about the product being successfully added to the cart"
+      },
+      {
+        "ID": "TC02",
+        "Test case": "Successfully added another product to the cart from the cart page and the order total value changed",
+        "Pre-conditions": "There is a product in a cart",
+        "Steps": [
+          "Navigate to the cart page",
+          "Register the order total value",
+          "Click \"plus\" button",
+          "Click Update button",
+          "Compare new and old order total value"
+        ],
+        "Expected Result": "The quantity of products in the cart increased by 1 and the value of the order total changed"
+      }
+    ]
+  },
+  {
+    "Scenario": "Using a discount codes",
+    "ID": "S03",
+    "Cases": [
+      {
+        "ID": "TC01",
+        "Test case": "Successfully used a discount code in the cart",
+        "Pre-conditions": [
+          "There is a product in a cart",
+          "There is a valid discount code"
+        ],
+        "Steps": [
+          "Navigate to the cart page",
+          "Register the order total value",
+          "Click discount code button",
+          "Enter discount code",
+          "Click Apply button"
+        ],
+        "Expected Result": "Information about adding a discount code is displayed and the value of the order total changed"
+      }
+    ]
   }
 ]
