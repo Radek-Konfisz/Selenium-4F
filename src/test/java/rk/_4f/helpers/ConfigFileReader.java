@@ -17,16 +17,15 @@ public class ConfigFileReader {
             properties.load(new FileReader(System.getProperty("user.dir") + propertyFilePath));
         } catch (IOException e) {
             logger.error("Error occurred in operation", e);
-            throw new RuntimeException("Configuration properties not found at " + System.getProperty("user.dir")
-                    + propertyFilePath);
+            throw new RuntimeException("Configuration properties not found at " + System.getProperty("user.dir") + propertyFilePath);
         }
     }
 
     public String getProperty(String propertyName) {
         String property = properties.getProperty(propertyName);
         if (property != null) return property;
-        else throw new RuntimeException("Given property " + propertyName +
-                "not not specified in the config properties file");
+        else
+            throw new RuntimeException("Given property " + propertyName + "not not specified in the config properties file");
     }
 
 }
