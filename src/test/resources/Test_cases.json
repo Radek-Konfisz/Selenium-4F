@@ -1,0 +1,13 @@
+[
+  {
+    "Scenario": "Logowanie z użyciem poprawnych danych",
+    "Przypadki testowe": "Przypadek testowy",
+    "Warunek wstępny": "Warunek wstępny",
+    "Kroki": [
+      "1. Krok1",
+      "2. Krok2",
+      "3. Krok3"
+    ],
+    "Oczekiwany rezultat": "Logowanie powiodło się"
+  }
+]

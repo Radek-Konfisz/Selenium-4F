@@ -1,0 +1,17 @@
+#TEST PLAN
+Content:
+  - Test Objective #Why are we testing?
+  - Test Scope #What are we testing?
+  - Test Approach #How are we testing?
+  - Test Environment and Tools #Where are we testing?
+  - Test Tools #With what are we testing?
+  - Entry Criteria #What to do to start testing?
+  - Exit Criteria #What to do to finish testing?
+  - Deliverables #How and where we write stuff down?
+  - Risks and Issues #What could go wrong and what will go wrong?
+  - Defect Management #What do we do when something goes wrong?
+  - Test Schedule #When are we testing?
+  - Roles #Who is testing what?
+
+Objective:
+Test Scope:
