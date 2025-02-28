@@ -5,15 +5,15 @@
     "Cases": [
       {
         "ID": "TC01",
-        "Test case": "User with correct credentials can login",
+        "Test case": "A user with correct credentials can login",
         "Pre-conditions": "There is a valid user account",
         "Steps": [
-          "Navigate to home page",
-          "Click my account link",
+          "Navigate to the home page",
+          "Click the my account link",
           "Enter email and password",
-          "Click login button"
+          "Click the Sign in button"
         ],
-        "Expected Result": "User sees the account page"
+        "Expected Result": "A user sees the account page"
       }
     ]
   },
@@ -23,32 +23,33 @@
     "Cases": [
       {
         "ID": "TC01",
-        "Test case": "Successfully added product to cart from the product page ",
-        "Pre-conditions": "Product is in stock",
+        "Test case": "Successfully added the product to cart from the product page ",
+        "Pre-conditions": "e product is in stock",
         "Steps": [
           "Navigate to product page",
-          "Click \"L size\" button",
-          "Click Add to cart button"
+          "Click the Size button",
+          "Click the Add to cart button"
         ],
         "Expected Result": "A mini cart slides out with information about the product being successfully added to the cart"
       },
       {
         "ID": "TC02",
-        "Test case": "Successfully added another product to the cart from the cart page and the order total value changed",
+        "Test case": "Successfully added another product to the cart from the cart page and the Order Total value changed",
         "Pre-conditions": "There is a product in a cart",
         "Steps": [
           "Navigate to the cart page",
-          "Register the order total value",
-          "Click \"plus\" button",
-          "Click Update button",
-          "Compare new and old order total value"
+          "Register the Order Total value",
+          "Click the Plus button",
+          "Click the Update button",
+          "Compare new and old Order Total value"
         ],
-        "Expected Result": "The quantity of products in the cart increased by 1 and the value of the order total changed"
+        "Expected Result": ["The quantity of products in the cart increased by 1",
+          "The value of the order total changed"]
       }
     ]
   },
   {
-    "Scenario": "Using a discount codes",
+    "Scenario": "Using discount codes",
     "ID": "S03",
     "Cases": [
       {
@@ -60,12 +61,13 @@
         ],
         "Steps": [
           "Navigate to the cart page",
-          "Register the order total value",
-          "Click discount code button",
-          "Enter discount code",
+          "Register the Order Total value",
+          "Click the Discount Code button",
+          "Enter a discount code",
           "Click Apply button"
         ],
-        "Expected Result": "Information about adding a discount code is displayed and the value of the order total changed"
+        "Expected Result": ["The information about adding a discount code is displayed",
+          "The value of the Order Total changed"]
       }
     ]
   }
