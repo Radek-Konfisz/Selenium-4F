@@ -4,8 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import static rk._4f.helpers.CustomInteraction.customClick;
-import static rk._4f.helpers.CustomInteraction.customSendKeys;
+import static rk._4f.helpers.CustomInteraction.*;
 
 public class CartPage extends BasePage<CartPage>{
 
@@ -25,6 +24,9 @@ public class CartPage extends BasePage<CartPage>{
     @FindBy(css = "button[class*=\"quantity-confirm\"]")
     private WebElement buttonConfirmQuantity;
 
+    @FindBy(xpath = "//div[contains(@class,'summary-grandTotal')]/span[contains(@class,'summary-amount')]/span")
+    private WebElement spanGrandTotal;
+
     public CartPage clickCouponAccordionButton(){
         customClick(driver,buttonCouponAccordion);
         return this;
@@ -41,7 +43,11 @@ public class CartPage extends BasePage<CartPage>{
     }
 
     public CartPage clickConfirmQuantityButton(){
-        customClick(driver,buttonCouponAccordion);
+        customClick(driver,buttonConfirmQuantity);
         return this;
+    }
+
+    public String getSpanGrandTotal() {
+        return customGetText(driver,spanGrandTotal);
     }
 }

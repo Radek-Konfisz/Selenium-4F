@@ -10,14 +10,14 @@ import rk._4f.pages.*;
 
 public class BaseTest {
 
-    public static final String PROPERTY_FILE_PATH ="//src//test//resources//config.properties";
-    public static final ConfigFileReader configFileReader = new ConfigFileReader(PROPERTY_FILE_PATH);
+    public static final ConfigFileReader configFileReader = new ConfigFileReader("//src//test//resources//config.properties");
 
     protected WebDriver driver;
     protected HomePage homePage;
     protected LoginPage loginPage;
     protected ProductPage productPage;
     protected MiniCartPage miniCartPage;
+    protected CartPage cartPage;
 
     @BeforeClass
     public void setup(){

@@ -9,7 +9,8 @@ import static rk._4f.helpers.CustomInteraction.customIsDisplayed;
 
 public class MiniCartPage extends BasePage<MiniCartPage> {
 
-    public static final String MINI_CART_ADD_TO_CART_MESSAGE = "Dodano do koszyka";
+    //Expected value of spanMessage
+    public static final String MINI_CART_ADD_TO_CART_MESSAGE = "DODANO DO KOSZYKA";
 
     public MiniCartPage(WebDriver driver) {
         super(driver);
