@@ -8,8 +8,8 @@ import java.util.Properties;
 
 public class ConfigFileReader {
 
-    private final Properties properties;
     private static final Logger logger = LoggerFactory.getLogger(ConfigFileReader.class);
+    private final Properties properties;
 
     public ConfigFileReader(String propertyFilePath) {
         properties = new Properties();

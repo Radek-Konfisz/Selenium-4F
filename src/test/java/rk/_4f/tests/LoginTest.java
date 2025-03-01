@@ -1,6 +1,5 @@
 package rk._4f.tests;
 
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -15,13 +14,12 @@ public class LoginTest extends BaseTest {
     public void shouldLoginSuccessfully(){
         loginPage = new LoginPage(driver);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        WebElement myAccountDashboard = loginPage.getMyAccountDashboard();
 
         loginPage.clickAllowCookiesButton();
         loginPage.clickMyAccountLink();
-        loginPage.setEmailInput(configFileReader.getProperty("email"))
-                .setPasswordInput(configFileReader.getProperty("password"))
+        loginPage.sendKeysEmailInput(configFileReader.getProperty("email"))
+                .sendKeysPasswordInput(configFileReader.getProperty("password"))
                 .clickSignInButton();
-        Assert.assertTrue(wait.until(d -> myAccountDashboard.isDisplayed()));
+        Assert.assertTrue(loginPage.isDisplayedMyAccountDashboard());
     }
 }

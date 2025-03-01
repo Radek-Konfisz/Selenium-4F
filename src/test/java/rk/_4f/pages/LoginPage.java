@@ -3,10 +3,7 @@ package rk._4f.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.time.Duration;
+import static rk._4f.helpers.CustomInteraction.*;
 
 public class LoginPage extends BasePage<LoginPage> {
 
@@ -26,28 +23,23 @@ public class LoginPage extends BasePage<LoginPage> {
     @FindBy(css = ".myAccount-dashboardRoot-lm6")
     private WebElement myAccountDashboard;
 
-    public LoginPage setEmailInput(String email) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(d -> inputEmail.isDisplayed());
-        inputEmail.sendKeys(email);
+    public LoginPage sendKeysEmailInput(String email) {
+        customSendKeys(driver,inputEmail,email);
         return this;
     }
 
-    public LoginPage setPasswordInput(String password) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(d -> inputPassword.isDisplayed());
-        inputPassword.sendKeys(password);
+    public LoginPage sendKeysPasswordInput(String password) {
+        customSendKeys(driver,inputPassword,password);
         return this;
     }
 
     public LoginPage clickSignInButton() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(2));
-        wait.until(ExpectedConditions.elementToBeClickable(signInButton)).click();
+        customClick(driver,signInButton);
         return this;
     }
 
-    public WebElement getMyAccountDashboard() {
-        return myAccountDashboard;
+    public Boolean isDisplayedMyAccountDashboard() {
+        return customIsDisplayed(driver, myAccountDashboard);
     }
 
 }
