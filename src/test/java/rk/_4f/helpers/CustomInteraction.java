@@ -33,4 +33,8 @@ public class CustomInteraction {
             return false;
         }
     }
+
+    public static void customWait(WebDriver driver, long duration) {
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(duration));
+    }
 }

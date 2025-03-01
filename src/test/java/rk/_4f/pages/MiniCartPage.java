@@ -5,8 +5,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import static rk._4f.helpers.CustomInteraction.customClick;
+import static rk._4f.helpers.CustomInteraction.customIsDisplayed;
 
 public class MiniCartPage extends BasePage<MiniCartPage> {
+
+    public static final String MINI_CART_ADD_TO_CART_MESSAGE = "Dodano do koszyka";
 
     public MiniCartPage(WebDriver driver) {
         super(driver);
@@ -26,11 +29,11 @@ public class MiniCartPage extends BasePage<MiniCartPage> {
         return this;
     }
 
-    public WebElement getDivMiniCart() {
-        return divMiniCart;
+    public Boolean isDisplayedDivMiniCart() {
+        return customIsDisplayed(driver, divMiniCart);
     }
 
-    public WebElement getSpanMessage() {
-        return spanMessage;
+    public String getSpanMessage() {
+        return spanMessage.getText();
     }
 }

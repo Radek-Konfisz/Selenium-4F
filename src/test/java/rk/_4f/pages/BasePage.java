@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import static rk._4f.helpers.CustomInteraction.customClick;
+import static rk._4f.helpers.CustomInteraction.customWait;
 
 public class BasePage<T> {
 
@@ -25,6 +26,7 @@ public class BasePage<T> {
 
     public T clickAllowCookiesButton(){
         customClick(driver,buttonAllowCookies);
+        customWait(driver, 500);
         return (T) this;
     }
 

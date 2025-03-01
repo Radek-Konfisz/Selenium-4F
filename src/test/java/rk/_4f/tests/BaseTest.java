@@ -11,21 +11,25 @@ import rk._4f.pages.*;
 public class BaseTest {
 
     public static final String PROPERTY_FILE_PATH ="//src//test//resources//config.properties";
-    public static ConfigFileReader configFileReader;
+    public static final ConfigFileReader configFileReader = new ConfigFileReader(PROPERTY_FILE_PATH);
 
     protected WebDriver driver;
+    protected HomePage homePage;
     protected LoginPage loginPage;
+    protected ProductPage productPage;
+    protected MiniCartPage miniCartPage;
 
     @BeforeClass
     public void setup(){
         driver = new ChromeDriver();
+        homePage = new HomePage(driver);
+        driver.get(configFileReader.getProperty("baseUrl"));
+        driver.manage().window().maximize();
+        homePage.clickAllowCookiesButton();
     }
 
     @BeforeMethod
     public void pageLoad(){
-        configFileReader = new ConfigFileReader(PROPERTY_FILE_PATH);
-        driver.get(configFileReader.getProperty("baseUrl"));
-        driver.manage().window().maximize();
     }
 
     @AfterClass

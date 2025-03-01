@@ -10,7 +10,7 @@
         "Test data": "",
         "Steps": [
           "Navigate to the home page",
-          "Click the my account link",
+          "Click the My account link",
           "Enter email and password",
           "Click the Sign in button"
         ],
@@ -28,7 +28,7 @@
         "Pre-conditions": "The product is in stock",
         "Test data": "",
         "Steps": [
-          "Navigate to product page",
+          "Navigate to the product page",
           "Click the Variant Option button",
           "Click the Add to cart button"
         ],
