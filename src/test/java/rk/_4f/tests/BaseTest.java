@@ -2,6 +2,7 @@ package rk._4f.tests;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -21,7 +22,7 @@ public class BaseTest {
     protected CartPage cartPage;
 
     @BeforeClass
-    public void setup(){
+    public void setup(ITestContext ctx) {
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
         loginPage = new LoginPage(driver);
@@ -30,16 +31,17 @@ public class BaseTest {
         cartPage = new CartPage(driver);
         driver.get(configFileReader.getProperty("baseUrl"));
         driver.manage().window().maximize();
-        homePage.clickAllowCookiesButton();
+        homePage.clickAllowCookiesButton("TESTS");
     }
 
     @BeforeMethod
-    public void pageLoad(){
+    public void pageLoad() {
+
 
     }
 
     @AfterClass
-    public void teardown(){
+    public void teardown() {
         driver.quit();
     }
 }
