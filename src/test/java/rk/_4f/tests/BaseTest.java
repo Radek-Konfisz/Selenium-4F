@@ -10,7 +10,8 @@ import rk._4f.pages.*;
 
 public class BaseTest {
 
-    public static final ConfigFileReader configFileReader = new ConfigFileReader("//src//test//resources//config.properties");
+    protected static final ConfigFileReader configFileReader = new ConfigFileReader("//src//test//resources//config.properties");
+    protected static final String PRODUCT_URL = "https://4f.com.pl/spodnie-treningowe-szybkoschnace-meskie-czarne-4fws25tftrm0781-20s.html";
 
     protected WebDriver driver;
     protected HomePage homePage;
@@ -23,6 +24,10 @@ public class BaseTest {
     public void setup(){
         driver = new ChromeDriver();
         homePage = new HomePage(driver);
+        loginPage = new LoginPage(driver);
+        productPage = new ProductPage(driver);
+        miniCartPage = new MiniCartPage(driver);
+        cartPage = new CartPage(driver);
         driver.get(configFileReader.getProperty("baseUrl"));
         driver.manage().window().maximize();
         homePage.clickAllowCookiesButton();
@@ -30,6 +35,7 @@ public class BaseTest {
 
     @BeforeMethod
     public void pageLoad(){
+
     }
 
     @AfterClass

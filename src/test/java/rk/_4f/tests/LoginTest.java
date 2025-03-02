@@ -2,19 +2,16 @@ package rk._4f.tests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import rk._4f.pages.LoginPage;
 
 
 public class LoginTest extends BaseTest {
 
     @Test
     public void s01t01() {
-        loginPage = new LoginPage(driver);
-
-        loginPage.clickMyAccountLink();
-        loginPage.sendKeysEmailInput(configFileReader.getProperty("email"))
-                .sendKeysPasswordInput(configFileReader.getProperty("password"))
-                .clickSignInButton();
-        Assert.assertTrue(loginPage.isDisplayedMyAccountDashboard());
+        loginPage.clickMyAccountLink(); //Click the 'My account' link
+        loginPage.sendKeysEmailInput(configFileReader.getProperty("email")) //Enter email
+                .sendKeysPasswordInput(configFileReader.getProperty("password")) //Enter password
+                .clickSignInButton(); //Click the 'Sign in' button
+        Assert.assertTrue(loginPage.isDisplayedMyAccountDashboard()); //A user sees the account page
     }
 }

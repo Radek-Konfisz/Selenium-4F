@@ -63,4 +63,14 @@ public class CustomInteraction {
         }
     }
 
+    public static Boolean isSmallerThanValue(WebDriver driver, WebElement element, int value) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, DEFAULT_DURATION);
+            wait.until(d -> Integer.parseInt(customGetText(d,element)) < value);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
+    }
+
 }
