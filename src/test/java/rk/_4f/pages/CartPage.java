@@ -3,6 +3,9 @@ package rk._4f.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static rk._4f.helpers.CustomInteraction.*;
 
@@ -47,7 +50,11 @@ public class CartPage extends BasePage<CartPage>{
         return this;
     }
 
-    public String getSpanGrandTotal() {
-        return customGetText(driver,spanGrandTotal);
+    public Boolean isGrandTotalBiggerThanValue(int value){
+        return isBiggerThanValue(driver,spanGrandTotal,value);
+    }
+
+    public int getSpanGrandTotalValue() {
+        return Integer.parseInt(customGetText(driver,spanGrandTotal));
     }
 }

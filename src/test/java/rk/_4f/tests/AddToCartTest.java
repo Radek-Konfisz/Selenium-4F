@@ -1,6 +1,5 @@
 package rk._4f.tests;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -38,20 +37,9 @@ public class AddToCartTest extends BaseTest {
         productPage.clickLSizeButton()
                 .clickAddToCartButton();
         miniCartPage.clickCartPageLink();
-        int valueBefore = Integer.parseInt(cartPage.getSpanGrandTotal());
+        int valueBefore = cartPage.getSpanGrandTotalValue();
         cartPage.clickPlusQuantityButton()
                 .clickConfirmQuantityButton();
-        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(5));
-
-//        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-//        wait.until(new ExpectedCondition<Boolean>() {
-//            @Override
-//            public Boolean apply(WebDriver d) {
-//                return Integer.parseInt(cartPage.getSpanGrandTotal()) > valueBefore;
-//            }
-//        });
-
-        wait.until(d -> Integer.parseInt(cartPage.getSpanGrandTotal()) > valueBefore);
-        Assert.assertTrue(true);
+        Assert.assertTrue(cartPage.isGrandTotalBiggerThanValue(valueBefore));
     }
 }

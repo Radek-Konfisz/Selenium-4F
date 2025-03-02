@@ -3,7 +3,6 @@ package rk._4f.helpers;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +51,16 @@ public class CustomInteraction {
     public static void customExplicitWait(WebDriver driver, WebElement element, long duration) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(duration));
         wait.until(d -> element.isDisplayed());
+    }
+
+    public static Boolean isBiggerThanValue(WebDriver driver, WebElement element, int value) {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, DEFAULT_DURATION);
+            wait.until(d -> Integer.parseInt(customGetText(d,element)) > value);
+            return true;
+        } catch (TimeoutException e) {
+            return false;
+        }
     }
 
 }
