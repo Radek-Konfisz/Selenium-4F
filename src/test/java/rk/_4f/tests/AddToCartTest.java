@@ -1,13 +1,10 @@
 package rk._4f.tests;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import rk._4f.pages.CartPage;
 import rk._4f.pages.MiniCartPage;
 import rk._4f.pages.ProductPage;
-
-import java.time.Duration;
 
 import static rk._4f.pages.MiniCartPage.MINI_CART_ADD_TO_CART_MESSAGE;
 
