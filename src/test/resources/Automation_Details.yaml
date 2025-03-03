@@ -1,5 +1,11 @@
 #Automation
 Design:
+  - Selenium Web Driver with Java
+  - Page Object design pattern
+  - Page factory
+  - All custom methods in one class
 Implementation:
-Report:
-Maintenance:
+  -Github repository
+  -One branch
+Report: Testng Reporter implementation
+Maintenance: Not scheduled
