@@ -1,4 +1,4 @@
-# Automated test for a 4f website in Java Selenium
+# Automated tests for a 4f website in Java Selenium
 
 ## Project structure:
 - Test plan: [Test_plan.yaml](src/test/resources/Test_plan.yaml)
