@@ -3,8 +3,8 @@
 ## Project structure:
 - Test plan: [Test_plan.yaml](src/test/resources/Test_plan.yaml)
 - Test Cases: [Test_Cases.json](src/test/resources/Test_Cases.json)
-- Pages: [rk/_4f/pages](src/test/java/rk/_4f/pages)
-- Tests: [rk/_4f/tests](src/test/java/rk/_4f/tests)
+- Pages: [pages](src/test/java/rk/_4f/pages)
+- Tests: [tests](src/test/java/rk/_4f/tests)
 
 ## Summary and evaluation
 The project is based on my previous professional work but in a much more limited form. 
