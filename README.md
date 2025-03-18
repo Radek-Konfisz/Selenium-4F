@@ -1,4 +1,4 @@
-# Automated tests for a 4f website in Java Selenium
+# Automated tests for a 4F website in Java Selenium
 ## Objective
 A demo project showing the skills of using Selenium Web Driver with Java
 ## Project structure:
