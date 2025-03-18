@@ -1,5 +1,6 @@
 # Automated tests for a 4f website in Java Selenium
-
+## Objective
+A demo project showing the skills of using Selenium Web Driver with Java
 ## Project structure:
 - Test plan: [Test_plan.yaml](src/test/resources/Test_plan.yaml)
 - Test Cases: [Test_Cases.json](src/test/resources/Test_Cases.json)
